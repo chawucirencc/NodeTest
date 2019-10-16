@@ -75,15 +75,22 @@ Person.prototype.sayName = function(){
     console.log(this.name)
 }
 
+function moidfyArry(arr, callback) {
+    // 操作arr
+    // 回调函数，可以将函数作为参数传递的函数。
+    arr.push(100);
+    callback();
+}
+
+
 function main() {
     // readSyncByRl('请输入任意字符：').then((res) => {
     //     console.log(res);
     // });
-    // connect_mysql()
-    // connect_redis()
-    // connect_mongodb()
-    var per = new Person()
-    per.sayName()
+    let arr = [12]
+    moidfyArry(arr, function () {
+        console.log("This is test", arr)
+    });   
 }
 
 main()
